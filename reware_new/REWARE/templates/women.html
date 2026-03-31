@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Clothing - Reware | Sustainable Fashion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="{{ url_for('home') }}" class="logo-link">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Reware Logo" class="logo-img">
+                    <h2 class="logo-text">Reware</h2>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="{{ url_for('home') }}" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('about') }}" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('shop') }}" class="nav-link">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('men') }}" class="nav-link">Men's</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('women') }}" class="nav-link active">Women's</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('contact') }}" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Women's Header -->
+    <section class="category-header women-header">
+        <div class="container">
+            <h1>Women's Collection</h1>
+            <p>Discover elegant pre-loved women's clothing from luxury brands</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filters">
+        <div class="container">
+            <div class="filter-bar">
+                <div class="filter-group">
+                    <label for="women-type">Type:</label>
+                    <select id="women-type">
+                        <option value="all">All Items</option>
+                        <option value="dresses">Dresses</option>
+                        <option value="tops">Tops & Blouses</option>
+                        <option value="pants">Pants & Jeans</option>
+                        <option value="shoes">Shoes</option>
+                        <option value="accessories">Accessories</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="women-size">Size:</label>
+                    <select id="women-size">
+                        <option value="all">All Sizes</option>
+                        <option value="xs">XS</option>
+                        <option value="s">S</option>
+                        <option value="m">M</option>
+                        <option value="l">L</option>
+                        <option value="xl">XL</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="women-brand">Brand:</label>
+                    <select id="women-brand">
+                        <option value="all">All Brands</option>
+                        <option value="chanel">Chanel</option>
+                        <option value="versace">Versace</option>
+                        <option value="coach">Coach</option>
+                        <option value="burberry">Burberry</option>
+                        <option value="michael-kors">Michael Kors</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="women-price">Price Range:</label>
+                    <select id="women-price">
+                        <option value="all">All Prices</option>
+                        <option value="0-75">$0 - $75</option>
+                        <option value="75-150">$75 - $150</option>
+                        <option value="150-300">$150 - $300</option>
+                        <option value="300+">$300+</option>
+                    </select>
+                </div>
+                <div class="search-group">
+                    <input type="text" id="women-search" placeholder="Search women's clothing...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Women's Products Grid -->
+    <section class="products">
+        <div class="container">
+            <div class="products-grid">
+                <!-- Women's Product 1 -->
+                <div class="product-card" data-category="dresses" data-size="m" data-price="250" data-brand="chanel">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/women-product1.jpg') }}" alt="Elegant Evening Dress">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Elegant Evening Dress</h3>
+                        <p class="brand">Chanel</p>
+                        <p class="size">Size: M</p>
+                        <p class="price">$250</p>
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Women's Product 2 -->
+                <div class="product-card" data-category="tops" data-size="s" data-price="120" data-brand="versace">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/women-product2.jpg') }}" alt="Silk Designer Blouse">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Silk Designer Blouse</h3>
+                        <p class="brand">Versace</p>
+                        <p class="size">Size: S</p>
+                        <p class="price">$120</p>
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Women's Product 3 -->
+                <div class="product-card" data-category="shoes" data-size="8" data-price="180" data-brand="jimmy-choo">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/women-product3.jpg') }}" alt="Classic High Heels">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Classic High Heels</h3>
+                        <p class="brand">Jimmy Choo</p>
+                        <p class="size">Size: 8</p>
+                        <p class="price">$180</p>
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Women's Product 4 -->
+                <div class="product-card" data-category="accessories" data-size="one" data-price="95" data-brand="coach">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/women-product4.jpg') }}" alt="Luxury Handbag">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Luxury Handbag</h3>
+                        <p class="brand">Coach</p>
+                        <p class="size">One Size</p>
+                        <p class="price">$95</p>
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Women's Product 5 -->
+                <div class="product-card" data-category="tops" data-size="l" data-price="140" data-brand="burberry">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/women-product5.jpg') }}" alt="Cashmere Cardigan">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Cashmere Cardigan</h3>
+                        <p class="brand">Burberry</p>
+                        <p class="size">Size: L</p>
+                        <p class="price">$140</p>
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Women's Product 6 -->
+                <div class="product-card" data-category="pants" data-size="m" data-price="75" data-brand="guess">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/women-product6.jpg') }}" alt="Designer Skinny Jeans">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Designer Skinny Jeans</h3>
+                        <p class="brand">Guess</p>
+                        <p class="size">Size: M (28x32)</p>
+                        <p class="price">$75</p>
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Women's Product 7 -->
+                <div class="product-card" data-category="shoes" data-size="7" data-price="65" data-brand="michael-kors">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/women-product7.jpg') }}" alt="Summer Sandals">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Summer Sandals</h3>
+                        <p class="brand">Michael Kors</p>
+                        <p class="size">Size: 7</p>
+                        <p class="price">$65</p>
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Women's Product 8 -->
+                <div class="product-card" data-category="dresses" data-size="s" data-price="195" data-brand="diane-von-furstenberg">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/women-product8.jpg') }}" alt="Cocktail Dress">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Cocktail Dress</h3>
+                        <p class="brand">Diane von Furstenberg</p>
+                        <p class="size">Size: S</p>
+                        <p class="price">$195</p>
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Reware</h3>
+                    <p>Sustainable fashion for a better tomorrow. Join the rewear revolution.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="{{ url_for('home') }}">Home</a></li>
+                        <li><a href="{{ url_for('shop') }}">Shop</a></li>
+                        <li><a href="{{ url_for('men') }}">Men's</a></li>
+                        <li><a href="{{ url_for('women') }}">Women's</a></li>
+                        <li><a href="{{ url_for('about') }}">About</a></li>
+                        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-envelope"></i> info@reware.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p class="address"><i class="fas fa-map-marker-alt"></i> 123 Fashion St, Style City</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Reware. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

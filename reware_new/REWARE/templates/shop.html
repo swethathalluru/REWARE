@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Reware | Sustainable Fashion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="{{ url_for('home') }}" class="logo-link">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Reware Logo" class="logo-img">
+                    <h2 class="logo-text">Reware</h2>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="{{ url_for('home') }}" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('home') }}#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('shop') }}" class="nav-link active">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('men') }}" class="nav-link">Men's</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('women') }}" class="nav-link">Women's</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('contact') }}" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Shop Header -->
+    <section class="shop-header">
+        <div class="container">
+            <h1>Shop Sustainable Fashion</h1>
+            <p>Discover our curated collection of pre-loved clothing</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filters">
+        <div class="container">
+            <div class="filter-bar">
+                <div class="filter-group">
+                    <label for="category">Category:</label>
+                    <select id="category">
+                        <option value="all">All Categories</option>
+                        <option value="women">Women's</option>
+                        <option value="men">Men's</option>
+                        <option value="accessories">Accessories</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="size">Size:</label>
+                    <select id="size">
+                        <option value="all">All Sizes</option>
+                        <option value="xs">XS</option>
+                        <option value="s">S</option>
+                        <option value="m">M</option>
+                        <option value="l">L</option>
+                        <option value="xl">XL</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="price">Price Range:</label>
+                    <select id="price">
+                        <option value="all">All Prices</option>
+                        <option value="0-25">$0 - $25</option>
+                        <option value="25-50">$25 - $50</option>
+                        <option value="50-100">$50 - $100</option>
+                        <option value="100+">$100+</option>
+                    </select>
+                </div>
+                <div class="search-group">
+                    <input type="text" id="search" placeholder="Search products...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products">
+        <div class="container">
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card" data-category="women" data-size="m" data-price="45">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/product1.jpg') }}" alt="Vintage Denim Jacket">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Vintage Denim Jacket</h3>
+                        <p class="brand">Levi's</p>
+                        <p class="size">Size: M</p>
+                        <p class="price">$45</p>
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card" data-category="men" data-size="l" data-price="35">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/product2.jpg') }}" alt="Classic White Shirt">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Classic White Shirt</h3>
+                        <p class="brand">Ralph Lauren</p>
+                        <p class="size">Size: L</p>
+                        <p class="price">$35</p>
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card" data-category="women" data-size="s" data-price="28">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/product3.jpg') }}" alt="Floral Summer Dress">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Floral Summer Dress</h3>
+                        <p class="brand">Zara</p>
+                        <p class="size">Size: S</p>
+                        <p class="price">$28</p>
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card" data-category="accessories" data-size="one" data-price="15">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/product4.jpg') }}" alt="Leather Handbag">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Leather Handbag</h3>
+                        <p class="brand">Coach</p>
+                        <p class="size">One Size</p>
+                        <p class="price">$15</p>
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card" data-category="men" data-size="m" data-price="55">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/product5.jpg') }}" alt="Wool Sweater">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Wool Sweater</h3>
+                        <p class="brand">J.Crew</p>
+                        <p class="size">Size: M</p>
+                        <p class="price">$55</p>
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card" data-category="women" data-size="l" data-price="40">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/product6.jpg') }}" alt="Black Blazer">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Black Blazer</h3>
+                        <p class="brand">H&M</p>
+                        <p class="size">Size: L</p>
+                        <p class="price">$40</p>
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Reware</h3>
+                    <p>Sustainable fashion for a better tomorrow. Join the rewear revolution.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="{{ url_for('home') }}">Home</a></li>
+                        <li><a href="{{ url_for('shop') }}">Shop</a></li>
+                        <li><a href="{{ url_for('about') }}">About</a></li>
+                        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-envelope"></i> info@reware.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Fashion St, Style City</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Reware. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
